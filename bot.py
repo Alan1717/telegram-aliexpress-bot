@@ -39,7 +39,8 @@ def send_product_info(message):
         text = random.choice(MESSAGES).format(**product)
 
         # Enviar mensaje con imagen
-        bot.send_photo(CHAT_ID, product["image"], caption=text, parse_mode="MarkdownV2")
+        bot.send_photo(CHAT_ID, product["image"], caption=text)  # Sin formato
+
 
     except IndexError:
         bot.send_message(CHAT_ID, "❌ Debes enviar un enlace después de /producto")
